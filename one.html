@@ -4,26 +4,31 @@
 <meta charset="utf-8" class="next-head"/>
 <title data-jsx="2779372333" class="next-head">one</title>
 </head>
-<body>
+<body onload="xunhuan()">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script >
+  var i = 0
+  function xunhuan(){
     $.ajax({
-       url: "http://v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
-       type: "GET",
-        success: function(result) {
-            var test = "http://v3.wufazhuce.com:8000/api/hp/detail/" + result.data[1] + "?version=3.5.0&platform=android"
-            $.ajax({
-               url: test,
-               type: "GET",
-                success: function(one) {
-                    var element = document.getElementById('myimage');
-                    element.src = one.data.hp_img_original_url;
-                    $('#status').text(one.data.hp_content);
-                    $('#title').text(one.data.hp_title);
-                }
-            });
-        }
+      url: "http://v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
+      type: "GET",
+      success: function(idlist) {  
+          var test = "http://v3.wufazhuce.com:8000/api/hp/detail/" + idlist.data[i] + "?version=3.5.0&platform=android"
+          $.ajax({
+             url: test,
+             type: "GET",
+              success: function(one) {
+                  var element = document.getElementById('myimage');
+                  element.src = one.data.hp_img_original_url;
+                  $('#status').text(one.data.hp_content);
+                  $('#title').text(one.data.hp_title);
+              }
+          });
+      }
     });
+    i++;
+    console.log(i);
+  };
 </script>
 <style type="text/css">
   p{font-family:"微软雅黑"; font-size:20px; color:#000000;}
@@ -31,5 +36,6 @@
 <p align="center" id="title"></p>
 <div align="center"><img id="myimage" width=395 height=432/></div>
 <p align="center" id="status"></p>
+<input type="button" id="xunhuan" onclick="xunhuan()" value="上一天" />
 </body>
 </html>
