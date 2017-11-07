@@ -1,4 +1,4 @@
-var i = 0
+var i = -1
 function next(){
   $.ajax({
     url: "http://v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
@@ -18,7 +18,8 @@ function next(){
     }
   });
   i++;
-  if(i==11){
+#  console.log(i);
+  if(i==10){
     alert("已超出可查看one的最晚日期，跳转到最早一天");
     i = 0
   };
@@ -42,8 +43,9 @@ function up(){
     }
   });
   i--;
-  if(i==0){
+#  console.log(i);
+  if(i==-1){
     alert("已到可查看one的最早日期，跳转到最晚一天");
-    i = 10
+    i = 9
   };
 };
