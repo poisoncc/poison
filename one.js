@@ -18,7 +18,7 @@ function next(){
     }
   });
   i++;
-#  console.log(i);
+  console.log(i);
   if(i==10){
     alert("已超出可查看one的最晚日期，跳转到最早一天");
     i = 0
@@ -43,7 +43,7 @@ function up(){
     }
   });
   i--;
-#  console.log(i);
+  console.log(i);
   if(i==-1){
     alert("已到可查看one的最早日期，跳转到最晚一天");
     i = 9
