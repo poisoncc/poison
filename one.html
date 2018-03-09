@@ -8,14 +8,26 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="one.js"></script>
 <style type="text/css">
-  p{font-family:"微软雅黑"; font-size:20px; color:#000000;}
+  p{font-family:"微软雅黑"; font-size:28px; color:#1E90FF;}
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+ }
 </style>
 <p align="center" id="title"></p>
 <div align="center"><img id="myimage" width=650/></div>
 <div style="width: 100%;" align="center"><p style="width: 700px;margin 0 auto;" align="center" id="content"></p></div>
 <div align="center">
-  <input type="button" onclick="up()" value="上一天" />
-  <input type="button" onclick="next()" value="下一天" />
+  <input type="button" class="button" onclick="up()" value="上一天" />
+  <input type="button" class="button" onclick="next()" value="下一天" />
 </div>
 </body>
 </html>
