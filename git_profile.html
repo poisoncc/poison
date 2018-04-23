@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" class="next-head"/>
+<title data-jsx="2779372333" class="next-head">docker registry</title>
+</head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+  $(function(){
+      var tags_list = "https://api.github.com/users/maotongxue/repos"
+      $.ajax({
+         url: tags_list,
+         type: "GET",
+         dataType: "json",
+         success: function(result) {
+             addBox(result);
+         }
+      });
+  });
+  function addBox(result){
+      $.each(result,function(index,obj){
+          $("#box").append("<div>"+
+              "<div><p>name: "+obj['name']+"</p></div>"+
+              "<div><p>user: "+obj['owner'].login+"</p></div>"+
+              "<div><p>size: "+obj['size']+"K</p></div>"+
+              "<div><p>clone_url: "+obj['clone_url']+"</p></div>"+
+              "</div>");
+      });
+  }
+</script>
+<body>
+<style type="text/css">
+  p{font-family:"微软雅黑"; font-size:20px; color:#1E90FF;}
+</style>
+<div id="box">
+</div>
+</body>
+</html>
