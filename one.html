@@ -22,6 +22,38 @@
     cursor: pointer;
  }
 </style>
+<script type="text/javascript"> 
+/* 鼠标特效 */ 
+var a_idx = 0; 
+jQuery(document).ready(function($) { 
+    $("body").click(function(e) { 
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善"); 
+        var $i = $("<span/>").text(a[a_idx]); 
+        a_idx = (a_idx + 1) % a.length; 
+        var x = e.pageX, 
+        y = e.pageY; 
+        $i.css({ 
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+            "top": y - 20, 
+            "left": x, 
+            "position": "absolute", 
+            "font-weight": "bold", 
+            "color": "#FFFF00" 
+        }); 
+        $("body").append($i); 
+        $i.animate({ 
+            "top": y - 180, 
+            "opacity": 0 
+        }, 
+        1500, 
+        function() { 
+            $i.remove(); 
+        }); 
+    }); 
+}); 
+  
+$(function(){$("#BadApplePlayer_Ad").hide()});
+</script>
 <div><p align="right" style="font-size: 12px;color:#EEAD0E;">api仅学习，侵权立删</p></div>
 <p align="center" id="title"></p>
 <div align="center"><img id="myimage" width=650/></div>
