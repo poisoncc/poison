@@ -1,10 +1,10 @@
 var i = -1
 function next(){
   $.ajax({
-    url: "http://v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
+    url: "//v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
     type: "GET",
-    success: function(idlist) {  
-        var test = "http://v3.wufazhuce.com:8000/api/hp/detail/" + idlist.data[i] + "?version=3.5.0&platform=android"
+    success: function(idlist) {
+        var test = "//v3.wufazhuce.com:8000/api/hp/detail/" + idlist.data[i] + "?version=3.5.0&platform=android"
         $.ajax({
            url: test,
            type: "GET",
@@ -26,10 +26,10 @@ function next(){
 };
 function up(){
   $.ajax({
-    url: "http://v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
+    url: "v3.wufazhuce.com:8000/api/hp/idlist/0?version=3.5.0&platform=android",
     type: "GET",
-    success: function(idlist) {  
-        var test = "http://v3.wufazhuce.com:8000/api/hp/detail/" + idlist.data[i] + "?version=3.5.0&platform=android"
+    success: function(idlist) {
+        var test = "//v3.wufazhuce.com:8000/api/hp/detail/" + idlist.data[i] + "?version=3.5.0&platform=android"
         $.ajax({
            url: test,
            type: "GET",
